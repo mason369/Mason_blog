@@ -1,17 +1,13 @@
-- title: Student, Harvard CS
-  from: 2014
-  to: 2018
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+- title: 自我评估
+  year: 2022
+  mo: 5
+  day: 22
+  description: 就自身而言，我认为自己的兴趣与爱好其实是比较广泛的，具体的讲自己对计算机、专业技术、美学等方面比较感兴趣，同时还比较关心时事新闻。而我平时也喜欢看相关爱好的书籍与文章，此外喜欢户外运动，喜欢打羽毛球、骑行。闲暇之余我喜欢听音乐看电影。
+　　我的性格是比较诚实、正直的。在做事情时认真勤奋责任心强，往往尽力做到自己能达的，同时比较喜欢创新。喜欢用不同的角度来看待分析问题。在自己的生活与同学及其他人的交往中比较随和，很少跟人发生正面冲突，也基本能做到小事不计较不记仇，当我遇到没有接触的事情和不懂的地方时能向人虚心请教，但有时也会坚持己见按自己预先设想的来办。
 
-- title: Software Engineer, Google, UK
-  from: 2018
-  to: present
-  description: Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-               sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-               Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-               reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+- title: 愿景
+  year: 2022
+  mo: 5
+  day: 22
+  description: 成为Java开发工程师或前端开发工程师之后我会一直努力，希望自己不管工作了多少年，还能够保持着现在这股热情，把精力都投入到工作中去，实现更好的发展。
