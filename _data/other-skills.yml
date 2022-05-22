@@ -1,7 +1,11 @@
 - name: Adobe Photoshop
-  percentage: 95
+  percentage: 80
   color: info
 
-- name: Adobe Illustrator
-  percentage: 90
-  color: success
+- name: 5G communications
+  percentage: 70
+  color: warning
+
+- name: Adobe Lightroom Classic
+  percentage: 80
+  color: info
