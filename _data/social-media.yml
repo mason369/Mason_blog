@@ -105,3 +105,8 @@ discord:
   url : https://discord.com/
   icon: fab fa-discord
   color:  5865F2
+
+reddit:
+  url : https://www.reddit.com/user/
+  icon: fab fa-reddit
+  color:  5865F2
