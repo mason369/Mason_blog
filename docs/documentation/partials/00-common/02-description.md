@@ -1,1 +1,1 @@
-mason369 is a free modern open-source Jekyll portfolio and blogging theme that works with GitHub Pages.
+portfolYOU is a free modern open-source Jekyll portfolio and blogging theme that works with GitHub Pages.

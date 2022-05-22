@@ -2,8 +2,8 @@
 source: ../
 collections_dir: docs
 data_dir: docs/_data
-baseurl: "/mason369-test"
-repository: mason369/mason369
+baseurl: "/portfolYOU-test"
+repository: mason369/portfolYOU
 open_new_tab: false
 
 ### Navbar Settings ###

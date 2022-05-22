@@ -1,6 +1,6 @@
 ## Customization
 
-Simply **override** the file you want to change by matching the **same file name and path**.
+Simply **override** the file you want to change by matching the **same file name and path**.  
 
 **Example 1:** New Favicon
 
@@ -12,10 +12,9 @@ Simply **override** the file you want to change by matching the **same file name
 1. Create **`assets/css/style.scss`**.
 1. Add the following lines:
 
-   ```css
-   ---
-   ---
-
-   /* Add your custom style here */
-   @import "mason369";
-   ```
+    ```css
+    ---
+    ---
+    /* Add your custom style here */
+    @import "portfolYOU";
+    ```
