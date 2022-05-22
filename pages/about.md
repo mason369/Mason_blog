@@ -1,14 +1,14 @@
 ---
 layout: page
-title: About
+title: 关于
 permalink: /about/
 weight: 3
 ---
 
-# **About Me**
+# **关于我**
 
-Hi I am **{{ site.author.name }}** :wave:,<br>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Hello! 欢迎来到我的博客！:wave:,<br>
+我将总结部分我遇到过的困难，并在此写出方法文档；如果对你有帮助，请持续关注我博客！
 
 <div class="row">
 {% include about/skills.html title="Programming Skills" source=site.data.programming-skills %}
