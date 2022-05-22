@@ -2,10 +2,10 @@
   percentage: 90
   color: danger
 
-- name: Go
-  percentage: 80
-  color:
+- name: Java
+  percentage: 20
+  color: secondary
 
-- name: Python
-  percentage: 70
+- name: JavaScript
+  percentage: 50
   color: secondary

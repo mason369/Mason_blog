@@ -8,4 +8,4 @@
 
 - name: Adobe Lightroom Classic
   percentage: 80
-  color: info
+  color: secondary
