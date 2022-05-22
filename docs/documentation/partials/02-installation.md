@@ -1,9 +1,9 @@
 ## Installation
 
-The following steps demonstrate how to use portfolYOU as **GitHub Pages remote theme**.
+The following steps demonstrate how to use Mason_blog as **GitHub Pages remote theme**.
 
-1. [Download][download] portfolYOU as .zip from official [repo][repo] then extract it.
-1. Rename **`portfolYOU-master/`** to **`<your-username>.github.io/`**
+1. [Download][download] Mason_blog as .zip from official [repo][repo] then extract it.
+1. Rename **`Mason_blog-master/`** to **`<your-username>.github.io/`**
 1. Remove everything **except** the **`docs/`** directory.
 1. Lift up the **`docs/`** directory's content to the root directory _(i.e move them to **`<your-username>.github.io/`**)_.
 1. Remove **documentation** stuff:
@@ -27,11 +27,11 @@ The following steps demonstrate how to use portfolYOU as **GitHub Pages remote t
 
 1. Update **`_config.yml`** with your data _(follow the comments for more help)_.
 1. Update your site content (posts, projects and about page).
-1. Finally, test portfolYOU [locally][locally] then [publish][publish] it to [GitHub Pages][gh-pages].
-1. _[Optional]_ To use a specific [version][versions] of portfolYOU _(defaults to latest version)_:
+1. Finally, test Mason_blog [locally][locally] then [publish][publish] it to [GitHub Pages][gh-pages].
+1. _[Optional]_ To use a specific [version][versions] of Mason*blog *(defaults to latest version)\_:
 
    ```yml
-   remote_theme: mason369/portfolYOU@v1.0.0
+   remote_theme: mason369/Mason_blog@v1.0.0
    ```
 
 [repo]: {{ site.github.repository_url }}
