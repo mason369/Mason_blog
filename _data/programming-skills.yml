@@ -1,11 +1,11 @@
 - name: HTML5/CSS3
-  percentage: 90
-  color: danger
+  percentage: 80
+  color: HTML
 
 - name: Java
   percentage: 20
-  color: secondary
+  color: Java
 
 - name: JavaScript
   percentage: 50
-  color: secondary
+  color: JavaScript
