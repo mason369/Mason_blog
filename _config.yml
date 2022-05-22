@@ -1,9 +1,7 @@
 ### Site Settings ###
 title: Mason_blog
 description: >-
-  I turn coffee :coffee: into code,
-  use tabs over spaces
-  and never broke production.
+  让写代码想像喝咖啡那样简单
 baseurl: "/Mason_blog" # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository: mason369/Mason_blog # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme: mason369/Mason_blog
