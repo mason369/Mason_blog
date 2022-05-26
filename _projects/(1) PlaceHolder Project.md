@@ -1,7 +1,7 @@
 ---
-name: PlaceHolder Project
-tools: [nothing, important]
-image: https://www.sketchappsources.com/resources/source-image/project-neon-groove-music-ui.png
-description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-external_url: https://www.google.com
+name: JDSALing
+tools: 
+image: 	https://lingasdj.github.io/Ling-Blog/assets/img/triangle.png
+description: JDSALing非常愿意和大家交朋友，当然这是一个漫长的过程！
+external_url: https://lingasdj.github.io/Ling-Blog/
 ---
