@@ -115,27 +115,3 @@
     {{ code | markdownify }}
 {%- endif -%}
 
-<details>
-
-    <summary class="text-monospace">View Code...</summary>
-    {%- highlight liquid -%}
-    {%- if code contains 'gist.github' -%}
-        {%- assign parts = code | split: '/'  -%}
-        {%- assign id = parts[3] | split: '.' | first -%}
-        {%- assign gist = id | prepend: '{%- gist ' -%}
-        {%- assign gist = gist | append: ' %'  -%}
-        {%- assign gist = gist | append: '}'  -%}
-        {{ gist }}
-    {%- else -%}
-        {{ code }}
-    {%- endif -%}
-    {%- endhighlight -%}
-
-
-    {%- for tip in page.tips -%}
-        <blockquote>
-            {{ tip | markdownify }}
-        </blockquote>
-    {%- endfor -%}
-
-</details>
