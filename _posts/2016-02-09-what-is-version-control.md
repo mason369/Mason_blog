@@ -1,10 +1,10 @@
 ---
-title: What is version control?
-tags: [Version Control]
+title: 谷歌相机开启camera2 API
+tags: [谷歌相机, 图像处理, Camera2 API]
 style: fill
-color: secondary
+color: warning
 comments: true
-description: Benefits of version control and version control systems.
+description: Google在安卓5.0中引入了Camera2 API，第三方APP可以利用这个接口，来控制摄像头模组的底层参数；而如果拍照APP的成像算法独到，则可以通过Camera2 API来进一步提升成像质量。
 ---
 
 
@@ -12,7 +12,7 @@ description: Benefits of version control and version control systems.
 
 ## 如何检测手机是否打开Camera 2 API
 我们可以在Google play商店下载“Manual Camera Compatibility Test”来进行检测。这款小工具会检查设备是否支持Camera2 API中引入的各种手动相机设置（手动对焦，WB，ISO，快门速度和RAW支持）。
-<img src="../assets/2022-6-2-img/Screenshot_2022-06-02-10-24-25-829_pl.vipek.camer.jpg">
+<img src="../assets/2022-6-2-img/reScreenshot_2022-06-02-10-24-25-829_pl.vipek.camer.jpg">
 
 >>结果全绿，那么在API层面上设备就有了兼容谷歌相机的可能
 
