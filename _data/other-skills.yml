@@ -3,7 +3,7 @@
   color: info
 
 - name: 5G communications
-  percentage: 70
+  percentage: 80
   color: warning
 
 - name: Adobe Lightroom Classic
