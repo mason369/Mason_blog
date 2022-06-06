@@ -1,7 +1,7 @@
 ### Site Settings ###
 title: Mason_blog
 description: >-
-  让写代码像喝咖啡那样简单
+  热忱生活，勇敢追梦，不负春光、不负自己。
 baseurl: "/Mason_blog" # Change to empty quotes if you are hosting your site at <your-username>.github.io directly
 repository: mason369/Mason_blog # Change to <your-username>/<your-username>.github.io (or remove it if you don't need remote projects)
 remote_theme: mason369/Mason_blog
