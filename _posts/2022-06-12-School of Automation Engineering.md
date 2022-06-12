@@ -1,6 +1,6 @@
 ---
 title: School of Automation Engineering现已建立！
-tags: [自动化, Github, 开源项目]
+tags: [Github, School of Automation Engineering, 自动化]
 style: fill
 color: dark
 comments: false
