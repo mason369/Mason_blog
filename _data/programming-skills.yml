@@ -1,15 +1,15 @@
 - name: HTML5/CSS3
   percentage: 80
-  color: HTML
+  color: primary
 
 - name: Java
   percentage: 20
-  color: Java
+  color: secondary
 
 - name: JavaScript
   percentage: 50
-  color: JavaScript
+  color: danger
 
 - name: C
   percentage: 60
-  color: c
+  color: dark
