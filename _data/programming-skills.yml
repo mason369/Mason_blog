@@ -9,3 +9,7 @@
 - name: JavaScript
   percentage: 50
   color: JavaScript
+
+- name: C
+  percentage: 60
+  color: c

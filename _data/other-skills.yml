@@ -9,3 +9,7 @@
 - name: Adobe Lightroom Classic
   percentage: 90
   color: secondary
+
+- name: Adobe Premiere Pro
+  percentage: 65
+  color: secondary
