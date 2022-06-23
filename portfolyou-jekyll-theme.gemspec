@@ -1,8 +1,8 @@
 Gem::Specification.new do |spec|
-  spec.name                    = "portfolyou-jekyll-theme"
+  spec.name                    = "Maosen's_Blog"
   spec.version                 = "2.3.0"
   spec.authors                 = ["Youssef Raafat"]
-  spec.email                   = ["YoussefRaafatNasry@gmail.com"]
+  spec.email                   = ["maosenyang00@gmail.com"]
 
   spec.summary                 = "A beautiful portfolio Jekyll theme."
   spec.homepage                = "https://github.com/mason369/Mason_blog"
