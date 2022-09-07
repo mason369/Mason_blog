@@ -7,18 +7,11 @@ layout: page
 <p class="post-metadata text-muted">
   {{ page.date | date_to_long_string }} -  
   <b>
-  {%- assign words = content | number_of_words -%}
-  {%- if words > 500 -%}
-    建议阅读时间：2分钟
+    {%- assign words = content | number_of_words -%}
+  {%- if words < 360 -%}
+    less than 1 min read time
   {%- else -%}
-  {{ words > 100 -% }} 
-   建议阅读时间：1分钟
-  {%- else -%}
-  {{ words > 1800 -% }} 
-   建议阅读时间：4分钟
-  {%- else -%}
-  {{ words > 6000 -% }} 
-   建议阅读时间：5分钟以上
+    {{ words | divided_by: 180 }} mins read time
   {%- endif -%}
   </b>
 
