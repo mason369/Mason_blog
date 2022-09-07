@@ -43,13 +43,13 @@ description: 网站，在日常生活中已经是一种司空见惯的东西。�
 ### 4. 大型网站
 严格意义来讲，大型网站不算是一类网站形态。因为所有拥有海量用户的网站都算是大型网站。由于成本的原因，大型网站内部一般是混合的，可能包含静态网站、动态网站、伪静态网站，但一般还是以伪静态网站为主。
 简单地讲，大型网站就是拥有多个服务器，来满足海量用户的使用需求。当然，大型网站还需要解决很多问题，如高并发、高可用等。毕竟能支撑10个用户的网站与拥有一个亿用户的网站是天差地别的。
-<center><img style="width:50%;" src="https://mason369.github.io/Mason_blog/assets/2022-8-30-img/.jpg">
+<center><img style="width:50%;" src="https://mason369.github.io/Mason_blog/assets/2022-8-30-img/4.jpg">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 5. 云计算网站
 近些年，云计算的概念也逐渐兴起了，那么我们先来聊聊云计算是什么。简单地说，云计算服务就好比是自来水厂，提供集中化的自来水处理，人们需要自来水的时候，只需要打开水龙头就行了。那么，云计算网站其实就是在网站中加入云计算服务。例如，直播网站、在线视频编辑网站等，这些网站系统都提供了集中化的云计算服务。
 云计算网站就是在普通网站的基础上（可能是动态网站或伪静态网站），加入了云计算服务，例如视频转码服务、数据挖掘服务等。现在很多云厂商都提供这些云计算服务，网站系统只需要简单调用接口即可拥有云计算的能力。当然，一些较为核心的云计算服务还是需要自己开发的，不然怎么和其他网站拉开优势。
-<center><img style="width:50%;" src="https://mason369.github.io/Mason_blog/assets/2022-8-30-img/.jpg">
+<center><img style="width:50%;" src="https://mason369.github.io/Mason_blog/assets/2022-8-30-img/5.jpg">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 ## 如何设计
 最基本的网站架构设计三大原则
