@@ -9,9 +9,16 @@ layout: page
   <b>
   {%- assign words = content | number_of_words -%}
   {%- if words < 5000 -%}
-    建议阅读时间：2分钟以上
+    建议阅读时间：2分钟
   {%- else -%}
-    {{ words | divided_by: 180 }} 建议阅读时间：1分钟
+    {{ words < 1000 -% }} 
+    建议阅读时间：1分钟
+    {%- else -%}
+    {{ words < 10000 -% }} 
+    建议阅读时间：4分钟
+    {%- else -%}
+    {{ words < 60000 -% }} 
+    建议阅读时间：5分钟以上
   {%- endif -%}
   </b>
 
