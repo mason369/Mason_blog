@@ -9,7 +9,7 @@ layout: page
   <b>
     {%- assign words = content | number_of_words -%}
   {%- if words < 360 -%}
-    建议阅读时间：少于一分钟
+    建议阅读时间：少于三分钟
   {%- else -%}
     建议阅读时间：{{ words | divided_by: 180 }} 分钟
   {%- endif -%}
