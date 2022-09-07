@@ -8,16 +8,16 @@ layout: page
   {{ page.date | date_to_long_string }} -  
   <b>
   {%- assign words = content | number_of_words -%}
-  {%- if words > 5000 -%}
+  {%- if words > 500 -%}
     建议阅读时间：2分钟
   {%- else -%}
-  {{ words > 1000 -% }} 
+  {{ words > 100 -% }} 
    建议阅读时间：1分钟
   {%- else -%}
-  {{ words > 18000 -% }} 
+  {{ words > 1800 -% }} 
    建议阅读时间：4分钟
   {%- else -%}
-  {{ words > 60000 -% }} 
+  {{ words > 6000 -% }} 
    建议阅读时间：5分钟以上
   {%- endif -%}
   </b>
