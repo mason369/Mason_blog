@@ -1,6 +1,6 @@
 ---
-title: CSS盒模型之内边距、边框、外边距 十九问 
-tags: [CSS,前端, 盒模型, Web]
+title: CSS盒模型之内边距、边框、外边距 十九问
+tags: [CSS, 前端, 盒模型, Web]
 style: fill
 color: success
 comments: false
@@ -373,7 +373,7 @@ h1 {
 后来越想越不对，不是说 margin 水平方向不会发生重叠问题吗？？？？
 
 但是根据面试官的思路来的话，在垂直方向似乎就讲的通了。
-
+```css
 <html>
 <style>
   body{
@@ -401,7 +401,7 @@ h1 {
   </ul>
 </body>
 </html>
-
+```
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-09-13-img/9.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
@@ -644,7 +644,7 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 
 推荐使用
 
-5. 浮动父元素
+1. 浮动父元素
 
 ```css
 img{
