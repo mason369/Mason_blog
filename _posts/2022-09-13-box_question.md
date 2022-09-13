@@ -5,7 +5,6 @@ style: fill
 color: success
 comments: false
 description: 本篇文章主要探讨盒模型，以及内边距、边框、外边距的面试题与思考
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-09-13-img/1.png">
 ---
 
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-09-13-img/1.png">
