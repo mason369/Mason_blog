@@ -406,28 +406,30 @@ h1 {
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-09-13-img/9.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
+## 第十五问：什么是 BFC？
 
-## 第十五问：什么是BFC？
-BFC的基本概念–BFC就是“块级格式化上下文”的意思，也有译作“块级格式化范围”。它是 W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。通俗的讲，就是一个特殊的块，内部有自己的布局方式，不受外边元素的影响。
-## 第十六问：那么BFC的原理是什么呢？
+BFC 的基本概念–BFC 就是“块级格式化上下文”的意思，也有译作“块级格式化范围”。它是 W3C CSS 2.1 规范中的一个概念，它决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。通俗的讲，就是一个特殊的块，内部有自己的布局方式，不受外边元素的影响。
 
-1. 内部的Box会在垂直方向上一个接一个的放置
-2. 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠（塌陷），与方向无关。）
-3. 每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）
-4. BFC的区域不会与float的元素区域重叠
-5. 计算BFC的高度时，浮动子元素也参与计算
-6. BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
+## 第十六问：那么 BFC 的原理是什么呢？
 
-## 第十七问：BFC由什么条件创立?
+1. 内部的 Box 会在垂直方向上一个接一个的放置
+2. 垂直方向上的距离由 margin 决定。（完整的说法是：属于同一个 BFC 的两个相邻 Box 的 margin 会发生重叠（塌陷），与方向无关。）
+3. 每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明 BFC 中子元素不会超出他的包含块，而 position 为 absolute 的元素可以超出他的包含块边界）
+4. BFC 的区域不会与 float 的元素区域重叠
+5. 计算 BFC 的高度时，浮动子元素也参与计算
+6. BFC 就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
 
-1. float属性不为none
-2. position属性为absolute或fixed
-3. display属性为inline-block、table-cell、table-caption、flex、inline-flex
-5. overflow属性不为visible（- overflow: auto/ hidden;）
+## 第十七问：BFC 由什么条件创立?
 
-## 第十八问： BFC的使用场景有哪些呢
+1. float 属性不为 none
+2. position 属性为 absolute 或 fixed
+3. display 属性为 inline-block、table-cell、table-caption、flex、inline-flex
+4. overflow 属性不为 visible（- overflow: auto/ hidden;）
+
+## 第十八问： BFC 的使用场景有哪些呢
 
 1. 可以用来自适应布局。
+
 ```css
 <!-- BFC不与float重叠 -->
     <section id="layout">
@@ -454,101 +456,107 @@ BFC的基本概念–BFC就是“块级格式化上下文”的意思，也有�
 ```
 
 2. 可以清除浮动：（塌陷问题）
+
 ```html
 <!-- BFC子元素即使是float也会参与计算 -->
 <section id="float">
-    <style media="screen">
-      #float{
-        background: #434343;
-        overflow: auto;
-      }
-      #float .float{
-        float: left;
-        font-size: 30px;
-      }
-    </style>
-    <div class="float">我是浮动元素</div>
+  <style media="screen">
+    #float {
+      background: #434343;
+      overflow: auto;
+    }
+    #float .float {
+      float: left;
+      font-size: 30px;
+    }
+  </style>
+  <div class="float">我是浮动元素</div>
 </section>
 ```
 
 3. 解决垂直边距重叠：
+
 ```html
 <section id="margin">
-    <style>
-        #margin{
-            background: pink;
-            overflow: hidden;
-        }
-        #margin>p{
-            margin: 5px auto 25px;
-            background: red;
-        }
-        #margin>div>p {
-            margin: 5px auto 20px;
-            background: red;
-        }
-    </style>
-    <p>1</p>
-    <div style="overflow:hidden">
-        <p>2</p>
-    </div>
-    <p>3</p>
-    <!-- 这样就会出现第一个p标签的margin-bottom不会和第二个p标签的margin-top重叠，这也是BFC元素的另一个原则，不会影响到外边的box，是一个独立的区域。 -->
+  <style>
+    #margin {
+      background: pink;
+      overflow: hidden;
+    }
+    #margin > p {
+      margin: 5px auto 25px;
+      background: red;
+    }
+    #margin > div > p {
+      margin: 5px auto 20px;
+      background: red;
+    }
+  </style>
+  <p>1</p>
+  <div style="overflow:hidden">
+    <p>2</p>
+  </div>
+  <p>3</p>
+  <!-- 这样就会出现第一个p标签的margin-bottom不会和第二个p标签的margin-top重叠，这也是BFC元素的另一个原则，不会影响到外边的box，是一个独立的区域。 -->
 </section>
 ```
-## 第十九问：清除浮动的方法（最常用的4种）
-这时候很多人会想到新建标签clear：both和float 方法，但是这两种方法并不推荐使用！
 
-什么是clear：both
+## 第十九问：清除浮动的方法（最常用的 4 种）
+
+这时候很多人会想到新建标签 clear：both 和 float 方法，但是这两种方法并不推荐使用！
+
+什么是 clear：both
 
 clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入口，不让子盒子出来
 
-1. 额外标签法（在最后一个浮动标签后，新加一个标签，给其设置clear：both；）（不推荐）
+1. 额外标签法（在最后一个浮动标签后，新加一个标签，给其设置 clear：both；）（不推荐）
+
 ```html
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <style>
-    .fahter{
+      .fahter {
         width: 400px;
         border: 1px solid deeppink;
-    }
-    .big{
+      }
+      .big {
         width: 200px;
         height: 200px;
         background: darkorange;
         float: left;
-    }
-    .small{
+      }
+      .small {
         width: 120px;
         height: 120px;
         background: darkmagenta;
         float: left;
-    }
-    .footer{
+      }
+      .footer {
         width: 900px;
         height: 100px;
         background: darkslateblue;
-    }
-    .clear{
-        clear:both;
-    }
+      }
+      .clear {
+        clear: both;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="fahter">
-        <div class="big">big</div>
-        <div class="small">small</div>
-        <div class="clear">额外标签法</div>
+      <div class="big">big</div>
+      <div class="small">small</div>
+      <div class="clear">额外标签法</div>
     </div>
     <div class="footer"></div>
-</body>
+  </body>
 </html>
 ```
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-09-13-img/10.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 如果我们清除了浮动，父元素自动检测子盒子最高的高度，然后与其同高。
@@ -559,16 +567,18 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 
 不建议使用。
 
-2. 父级添加overflow属性（父元素添加overflow:hidden）（不推荐）
+2. 父级添加 overflow 属性（父元素添加 overflow:hidden）（不推荐）
 
-通过触发BFC方式，实现清除浮动
+通过触发 BFC 方式，实现清除浮动
+
 ```css
-.fahter{
-    width: 400px;
-    border: 1px solid deeppink;
-    overflow: hidden;
+.fahter {
+  width: 400px;
+  border: 1px solid deeppink;
+  overflow: hidden;
 }
 ```
+
 优点：代码简洁
 
 缺点：内容增多的时候容易造成不会自动换行导致内容被隐
@@ -576,7 +586,8 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 
 不推荐使用
 
-3. 使用after伪元素清除浮动（推荐使用）
+3. 使用 after 伪元素清除浮动（推荐使用）
+
 ```css
 .clearfix:after{/*伪元素是行内元素 正常浏览器清除浮动方法*/
     content: "";
@@ -588,7 +599,7 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 .clearfix{
     *zoom: 1;/*ie6清除浮动的方式 *号只有IE6-IE7执行，其他浏览器不执行*/
 }
- 
+
 <body>
     <div class="fahter clearfix">
         <div class="big">big</div>
@@ -598,13 +609,15 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
     <div class="footer"></div>
 </body>
 ```
+
 优点：符合闭合浮动思想，结构语义化正确
 
-缺点：ie6-7不支持伪元素：after，使用zoom:1触发hasLayout.
+缺点：ie6-7 不支持伪元素：after，使用 zoom:1 触发 hasLayout.
 
 推荐使用
 
-4. 使用before和after双伪元素清除浮动
+4. 使用 before 和 after 双伪元素清除浮动
+
 ```css
 
  .clearfix:after,.clearfix:before{
@@ -617,7 +630,7 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 .clearfix{
     *zoom: 1;
 }
- 
+
  <div class="fahter clearfix">
         <div class="big">big</div>
         <div class="small">small</div>
@@ -625,13 +638,15 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 
  <div class="footer"></div>
 ```
+
 优点：代码更简洁
 
-缺点：用zoom:1触发hasLayout.
+缺点：用 zoom:1 触发 hasLayout.
 
 推荐使用
 
 5. 浮动父元素
+
 ```css
 img{
   width:50px;
@@ -645,5 +660,5 @@ img{
   <img src="images/nav_left.jpg"/>
 </div>
 ```
-这种方式也不推荐，了解即可。
 
+这种方式也不推荐，了解即可。
