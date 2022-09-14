@@ -3,7 +3,7 @@ title: CSS盒模型之内边距、边框、外边距 十九问
 tags: [CSS, 前端, 盒模型, Web]
 style: fill
 color: success
-comments: false
+comments: true
 description: 本篇文章主要探讨盒模型，以及内边距、边框、外边距的面试题与思考
 ---
 
