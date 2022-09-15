@@ -8,10 +8,7 @@
   hr {
     background: $secondary;
   }
-  .lineno{
-  padding: 5px;
-  text-align: center;
-}
+
   img:not(.emoji) {
     display: block;
     max-width: 100%;
@@ -101,7 +98,7 @@
 
     td {
       border: 1px solid #ddd;
-      padding: 8px 16px;
+      padding: 11px;
     }
 
     th {
