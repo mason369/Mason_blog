@@ -55,6 +55,9 @@
 			padding: 0 1em;
 			text-align: center;
 		}
+    .highlight{
+      inline-size: max-content;
+    }
 		background: $light;
 		// border: 1px solid #ddd;
 		color: $dark;
