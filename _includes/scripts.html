@@ -17,6 +17,7 @@
 </script>
 <script>
 	[...document.getElementsByTagName("code")].forEach((item) => {
+        let code = document.querySelector('code')
 		code.addEventListener("onMouseOver", function (e) {
 			item.style.position = "relative";
 			let copyButton = document.createElement("button");
