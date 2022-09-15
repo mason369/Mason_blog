@@ -58,6 +58,7 @@
     .highlight{
       inline-size: max-content;
     }
+	
     border-radius: 25px;
 		background: $light;
 		// border: 1px solid #ddd;
@@ -67,11 +68,12 @@
 		line-height: 20px;
 		margin-bottom: 1.6em;
 		max-width: 100%;
-		padding: 1em 1.5em;
+		padding: 1em 0em 1em 1.5em;
 		display: block;
 		page-break-inside: avoid;
 		overflow: auto;
 		word-wrap: break-word;
+		overflow: hidden;
 	}
 
 	code.highlighter-rouge {
@@ -106,6 +108,9 @@
 		td {
 			border: 1px solid #ddd;
 			padding: 0px;
+		}
+		td:nth-child(2){
+			padding: 0 100vh 0 0;
 		}
 
 		th {
