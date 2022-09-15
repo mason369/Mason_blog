@@ -76,10 +76,7 @@
 		overflow: hidden;
 
 	}
-	code :hover button{
-		transform: translateY(10px);
-		transition: all 1s ease-in-out;
-	}
+
 	code.highlighter-rouge {
 		background-color: $light;
 		color: $dark;

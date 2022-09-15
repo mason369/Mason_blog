@@ -54,4 +54,23 @@
 		$('[data-toggle="tooltip"]').tooltip();
 	});
 </script>
-
+<script>
+	 //添加鼠标移入移出事件
+	function fun(){
+		//获取所有li节点
+		var but =  document.getElementById("code").getElementsByTagName("button");
+		//遍历所有li节点
+	
+			//添加鼠标移入事件
+			but.οnmοuseοver=function(){
+				this.style.backgroundColor="#ffcc00";
+				this.style.fontSize="20px";
+			}
+			//添加鼠标移出事件
+			but.οnmοuseοut=function(){
+				this.style.backgroundColor="#eeeeee";
+				this.style.fontSize="16px";
+			}
+		
+    }
+</script>
