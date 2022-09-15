@@ -20,12 +20,12 @@
 		item.style.position = "relative";
 		let copyButton = document.createElement("button");
 		copyButton.style.cssText =
-			"border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:823px;font-family: SFMono-Regular,Menlo,Monaco,Consolas,monospace;top:-16px;padding:10px 12px;cursor: pointer";
+			"border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:823px;font-family: SFMono-Regular,Menlo,Monaco,Consolas,monospace;top:-16px;fobt-size:10px;padding:10px 12px;cursor: pointer";
 		copyButton.innerHTML = "复制";
 		copyButton.onclick = function () {
 			let copyData = item.firstChild.innerText;
 			copyToClipboard(copyData);
-			copyButton.innerHTML = "复制成功";
+			copyButton.innerHTML = "已复制";
 			setTimeout(function () {
 				copyButton.innerHTML = "复制";
 			}, 1000);
@@ -53,21 +53,4 @@
 	$(function () {
 		$('[data-toggle="tooltip"]').tooltip();
 	});
-</script>
-<script>
-	//添加鼠标移入移出事件
-
-	var but = document.getElementsByTagName('code');
-	//遍历所有li节点
-
-	//添加鼠标移入事件
-	but.lastChild.οnmοuseοver = function () {
-		this.style.backgroundColor = "#ffcc00";
-		this.style.fontSize = "20px";
-	};
-	//添加鼠标移出事件
-	but.lastChild.οnmοuseοut = function () {
-		this.style.backgroundColor = "#eeeeee";
-		this.style.fontSize = "16px";
-	};
 </script>
