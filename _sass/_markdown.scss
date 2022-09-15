@@ -76,8 +76,8 @@
 		overflow: hidden;
 
 	}
-	.highlight :hover button{
-		display: inline-block;
+	.highlight :hover{
+		display: block;
 	}
 	code.highlighter-rouge {
 		background-color: $light;
