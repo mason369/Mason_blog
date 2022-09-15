@@ -44,6 +44,7 @@ function getTheme() {
 function setTheme(value) {
   document.documentElement.setAttribute(THEME_ATTR, value);
 }
+document.addEventListener("load") {
 [...document.getElementsByTagName("pre")].forEach(item => {
   item.style.position = "relative";
   let copyButton = document.createElement("button")
@@ -73,4 +74,5 @@ function copyToClipboard(content) {
       })(content);
       document.execCommand('Copy');
   }
+}
 }
