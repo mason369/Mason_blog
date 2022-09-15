@@ -12,11 +12,9 @@
 
 <!-- wow.js CDN & Activation -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script> new WOW().init(); </script>
 <script>
-	new WOW().init();
-</script>
-<script>
-	var snippets = document.querySelectorAll('pre');
+var snippets = document.querySelectorAll('code');
 [].forEach.call(snippets, function(snippet) {
 	if (snippet.closest('.snippet') !== null) {
 		snippet.firstChild.insertAdjacentHTML('beforebegin', '<button class="btn" data-clipboard-snippet><img class="clippy" height="20" src="/assets/clippy.svg" alt="Copy to clipboard"></button>');
@@ -25,7 +23,7 @@
 </script>
 <!-- Initialize all tooltips -->
 <script>
-	$(function () {
-		$('[data-toggle="tooltip"]').tooltip();
-	});
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+})
 </script>
