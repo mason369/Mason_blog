@@ -32,6 +32,9 @@
 			}, 1000);
 		};
 		item.appendChild(copyButton);
+        if (document.getElementsByTagName("code").onclick) {
+            copyButton.style.cssText = "display: none"
+        }
 	});
 	// js 复制到剪贴板
 	function copyToClipboard(content) {
