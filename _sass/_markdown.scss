@@ -74,11 +74,11 @@
 		overflow: auto;
 		word-wrap: break-word;
 		overflow: hidden;
-	&:hover button{
+
+	}
+	code :hover {
 		display: block;
 	}
-	}
-	
 	code.highlighter-rouge {
 		background-color: $light;
 		color: $dark;
