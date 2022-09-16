@@ -16,39 +16,54 @@
 	new WOW().init();
 </script>
 <script>
-	[...document.getElementsByClassName("rouge-code")].forEach((item) => {
-		item.style.position = "relative";
-		let copyButton = document.createElement("button");
-
-		copyButton.style.cssText =
-			"border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:770px;top:-49px;fobt-size:10px;width: 68px;height: 48px;opacity: .5;cursor: pointer";
-		copyButton.innerHTML = "复制";
-		copyButton.style.cssText ="border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:770px;top:-49px;fobt-size:10px;width: 68px;height: 48px;opacity: .5;cursor: pointer";
-		copyButton.onclick = function () {
-			let copyData = item.firstChild.innerText;
-			copyToClipboard(copyData);
-			copyButton.innerHTML = "已复制";
-			setTimeout(function () {
-				copyButton.innerHTML = "复制";
-			}, 1000);
-		};
-		item.appendChild(copyButton);
-	});
-	// js 复制到剪贴板
-	function copyToClipboard(content) {
-		if (window.clipboardData) {
-			window.clipboardData.setData("text", content);
-		} else {
-			(function (content) {
-				document.oncopy = function (e) {
-					e.clipboardData.setData("text", content);
-					e.preventDefault();
-					document.oncopy = null;
-				};
-			})(content);
-			document.execCommand("Copy");
-		}
-	}
+	
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="fas fa-copy"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-check-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-check-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('fa-copy');
+        $icon.addClass('fa-times-circle');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('fa-times-circle');
+          $icon.addClass('fa-copy');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }
 </script>
 <!-- Initialize all tooltips -->
 <script>
