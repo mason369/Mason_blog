@@ -19,9 +19,9 @@
 	[...document.getElementsByClassName("rouge-code")].forEach((item) => {
 		item.style.position = "relative";
 		let copyButton = document.createElement("button");
-        
+
 		copyButton.style.cssText =
-			"border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:770px;font-family: SFMono-Regular,Menlo,Monaco,Consolas,monospace;top:-49px;fobt-size:10px;padding:12px 25px 12px 12px;cursor: pointer";
+			"border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:770px;font-family: SFMono-Regular,Menlo,Monaco,Consolas,monospace;top:-49px;fobt-size:10px;width: 62px;height: 48px;opacity: .5;cursor: pointer";
 		copyButton.innerHTML = "复制";
 		copyButton.style.cssText ="border-radius: 5px;color:#fff;border-color:#fff;background-color:rgb(0,123,255); position:absolute;left:770px;font-family: SFMono-Regular,Menlo,Monaco,Consolas,monospace;top:-49px;fobt-size:10px;padding:12px 25px 12px 12px;cursor: pointer;text-align: center;"
 		copyButton.onclick = function () {
