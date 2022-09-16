@@ -55,11 +55,11 @@
 			padding: 0 1em;
 			text-align: center;
 		}
-    .highlight{
-      inline-size: max-content;
-    }
-	
-    border-radius: 25px;
+		.highlight {
+			inline-size: max-content;
+		}
+
+		border-radius: 25px;
 		background: $light;
 		// border: 1px solid #ddd;
 		color: $dark;
@@ -74,7 +74,6 @@
 		overflow: auto;
 		word-wrap: break-word;
 		overflow: hidden;
-
 	}
 
 	code.highlighter-rouge {
@@ -103,7 +102,7 @@
 
 	table:not(.highlight) {
 		display: block;
-		
+
 		margin: 2rem 0;
 
 		td {
@@ -111,7 +110,7 @@
 			border-radius: 25px;
 			padding: 0px;
 		}
-		td:nth-child(2){
+		td:nth-child(2) {
 			width: 815px;
 		}
 
