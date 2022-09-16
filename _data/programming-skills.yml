@@ -7,7 +7,7 @@
   color: secondary
 
 - name: JavaScript
-  percentage: 50
+  percentage: 65
   color: danger
 
 - name: C
