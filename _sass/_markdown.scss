@@ -58,7 +58,7 @@
 		.highlight {
 			inline-size: max-content;
 		}
-
+		
 		border-radius: 25px;
 		background: $light;
 		// border: 1px solid #ddd;
@@ -74,9 +74,11 @@
 		word-wrap: break-word;
 		overflow: hidden;
 	}
-pre:not(last-child){
-	margin-bottom: 1rem;
-}
+	pre{
+		pre{
+			margin-bottom: 0;
+		}
+	}
 	code.highlighter-rouge {
 		background-color: $light;
 		color: $dark;
