@@ -20,7 +20,7 @@ function test() {
 test();
 console.log(message); //报错！message未定义
 ```
-
+<center>
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">这里，message 变量是函数内部使用 var 定义的，函数名 test()，调用它会创建这个变量并给它赋值，调用之后变量就会被销毁，所以最后代码运行结果会显示未定义。</span></center>
 
 ```javascript
@@ -30,7 +30,7 @@ function test() {
 test();
 console.log(message); //正常打印hi
 ```
-
+<center>
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;">去掉 var 之后，message 就会变成全局变量，代码就可以正常打印。只要调用一次函数，就会定义这个变量，并且可以在函数外部访问到。虽然通过省略 var 可以定义全局变量，但不推荐这么做。在局部作用域中定义的全局变量很那维护，容易出错。</span></center>
 
 ### 2. var 声明提升
@@ -204,4 +204,5 @@ for (const j = 7; i < 5; ++i) {
 
 1. 声明变量的同时必须初始化，修改值时指针就会发生改变，要报错
 2. 如果是复合类型，只修改某个 value 值是不会报错的。
-   在开发过程中，程序员优先使用 const，let 次之，一般不使用 var
+3. 
+在开发过程中，程序员优先使用 const，let 次之，一般不使用 var
