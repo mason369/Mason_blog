@@ -14,8 +14,7 @@
 	{%- endif -%} {% endfor %}
 </div>
 <script>
-	var a = document.getElementsByClassName(".list-group");
-	list.sort(function (a, b) {
-		return b.createTime < a.createTime ? -1 : 1;
-	});
+	var points = document.getElementsByClassName(".list-group");
+	points.sort(function(a, b){return a-b});    // 按升序对数组中的数字进行排序
+// 数组中的第一项 (points[0]) 现在是最低值
 </script>
