@@ -708,22 +708,26 @@ rem 由于是基于 html 的 font-size 来计算，所以通常用于自适应�
 	}
 })(document, window);
 ```
+
 比如当视口是 375px 的时候，经过计算 html 的 font-size 会是 100px，这样有什么好处呢？好处就是方便写样式，比如从设计图量出来的 header 高度是 50px 的，那我们写样式的时候就可以直接写：
+
 ```css
 header {
-    height: 0.5rem;
+	height: 0.5rem;
 }
 ```
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/18.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 每个从设计图量出来的尺寸只要除于 100 即可得到当前元素的 rem 值，都不用经过计算，非常方便。偷偷告诉你，如果你把上面那串计算 html 标签 font-size 的 JS 代码中的 200 替换成 2，那在计算 rem 的时候就不需要除于 100 了，从设计图量出多大 px，就直接写多少个 rem。
 
 ### vw/vh
+
 vw 和 vh 分别是相对于屏幕视口宽度和高度而言的长度单位：
 
-* 1vw = 视口宽度均分成 100 份中 1 份的长度；
-* 1vh = 视口高度均分成 100 份中 1 份的长度；
+- 1vw = 视口宽度均分成 100 份中 1 份的长度；
+- 1vh = 视口高度均分成 100 份中 1 份的长度；
 
 在 JS 中 100vw = window.innerWidth，100vh = window.innerHeight。
 
@@ -732,31 +736,373 @@ vw 和 vh 分别是相对于屏幕视口宽度和高度而言的长度单位：
 vw/vh 的出现使得多了一种写自适应布局的方案，开发者不再局限于 rem 了。
 相对视口的单位，除了 vw/vh 外，还有 vmin 和 vmax：
 
-* vmin：取 vw 和 vh 中值较小的；
-* vmax：取 vw 和 vh 中值较大的；
+- vmin：取 vw 和 vh 中值较小的；
+- vmax：取 vw 和 vh 中值较大的；
 
 颜色体系
 CSS 中用于表示颜色的值种类繁多，足够构成一个体系，所以这里就专门拿出一个小节来讲解它。
 根据 [CSS 颜色草案](https://drafts.csswg.org/css-color-3/) 中提到的颜色值类型，大概可以把它们分为这几类：
 
 ### 颜色关键字
-* transparent 关键字
-* currentColor 关键字
-* RGB 颜色
-* HSL 颜色
+
+- transparent 关键字
+- currentColor 关键字
+- RGB 颜色
+- HSL 颜色
 
 ## 颜色关键字
-颜色关键字（color keywords）是不区分大小写的标识符，它表示一个具体的颜色，比如 white（白），黑（black）等；
-可接受的关键字列表在CSS的演变过程中发生了改变：
 
-* CSS 标准 1 只接受 16 个基本颜色，称为 VGA 颜色，因为它们来源于 VGA 显卡所显示的颜色集合而被称为 VGA colors （视频图形阵列色彩）。
-* CSS 标准 2 增加了 orange 关键字。
-* 从一开始，浏览器接受其它的颜色，由于一些早期浏览器是 X11 应用程序，这些颜色大多数是 X11 命名的颜色列表，虽然有一点不同。SVG 1.0 是首个正式定义这些关键字的标准；CSS 色彩标准 3 也正式定义了这些关键字。它们经常被称作扩展的颜色关键字， X11 颜色或 SVG 颜色 。
-* CSS 颜色标准 4 添加可 rebeccapurple 关键字来纪念 web 先锋 Eric Meyer。
+颜色关键字（color keywords）是不区分大小写的标识符，它表示一个具体的颜色，比如 white（白），黑（black）等；
+可接受的关键字列表在 CSS 的演变过程中发生了改变：
+
+- CSS 标准 1 只接受 16 个基本颜色，称为 VGA 颜色，因为它们来源于 VGA 显卡所显示的颜色集合而被称为 VGA colors （视频图形阵列色彩）。
+- CSS 标准 2 增加了 orange 关键字。
+- 从一开始，浏览器接受其它的颜色，由于一些早期浏览器是 X11 应用程序，这些颜色大多数是 X11 命名的颜色列表，虽然有一点不同。SVG 1.0 是首个正式定义这些关键字的标准；CSS 色彩标准 3 也正式定义了这些关键字。它们经常被称作扩展的颜色关键字， X11 颜色或 SVG 颜色 。
+- CSS 颜色标准 4 添加可 rebeccapurple 关键字来纪念 web 先锋 Eric Meyer。
 
 如下这张图是 16 个基础色，又叫 VGA 颜色。截止到目前为止 CSS 颜色关键字总共有 146 个，这里可以查看 [完整的色彩关键字列表](https://codepen.io/bulandent/pen/gOLovwL)
 
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/20.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
+需要注意的是如果声明的时候的颜色关键字是错误的，浏览器会忽略它。
 
+## transparent 关键字
+
+transparent 关键字表示一个完全透明的颜色，即该颜色看上去将是背景色。从技术上说，它是带有 alpha 通道为最小值的黑色，是 rgba(0,0,0,0) 的简写。
+透明关键字有什么应用场景呢？
+
+### 实现三角形
+
+下面这个图是用 4 条边框填充的正方形，看懂了它你大概就知道该如何用 CSS 写三角形了。
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/21.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+```css
+div {
+	border-top-color: #ffc107;
+	border-right-color: #00bcd4;
+	border-bottom-color: #e26b6b;
+	border-left-color: #cc7cda;
+	border-width: 50px;
+	border-style: solid;
+}
+```
+
+### 用 transparent 实现三角形的原理：
+
+- 首先宽高必须是 0px，通过边框的粗细来填充内容；
+- 那条边需要就要加上颜色，而不需要的边则用 transparent；
+- 想要什么样姿势的三角形，完全由上下左右 4 条边的中有颜色的边和透明的边的位置决定；
+- 等腰三角形：设置一条边有颜色，然后紧挨着的 2 边是透明，且宽度是有颜色边的一半；直角三角形：设置一条边有颜色，然后紧挨着的任何一边透明即可。
+
+看下示例：
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/22.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 增大点击区域
+
+常常在移动端的时候点击的按钮的区域特别小，但是由于现实效果又不太好把它做大，所以常用的一个手段就是通过透明的边框来增大按钮的点击区域：
+
+```css
+.btn {
+	border: 5px solid transparent;
+}
+```
+
+## currentColor 关键字
+
+currentColor 会取当前元素继承父级元素的文本颜色值或声明的文本颜色值，即 computed 后的 color 值。
+
+比如，对于如下 CSS，该元素的边框颜色会是 red：
+
+```css
+.btn {
+	color: red;
+	border: 1px solid currentColor;
+}
+```
+
+## RGB[A] 颜色
+
+RGB[A] 颜色是由 R(red)-G(green)-B(blue)-A(alpha) 组成的色彩空间。
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/23.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+在 CSS 中，它有两种表示形式：
+
+- 十六进制符号；
+- 函数符；
+
+### 十六进制符号
+
+RGB 中的每种颜色的值范围是 00~ff，值越大表示颜色越深。所以一个颜色正常是 6 个十六进制字符加上 # 组成，比如红色就是 #ff0000。
+如果 RGB 颜色需要加上不透明度，那就需要加上 alpha 通道的值，它的范围也是 00~ff，比如一个带不透明度为 67% 的红色可以这样写 #ff0000aa。
+使用十六进制符号表示颜色的时候，都是用 2 个十六进制表示一个颜色，如果这 2 个字符相同，还可以缩减成只写 1 个，比如，红色 #f00；带 67% 不透明度的红色 #f00a。
+
+### 函数符
+
+当 RGB 用函数表示的时候，每个值的范围是 0~255 或者 0%~100%，所以红色是 rgb(255, 0, 0)， 或者 rgb(100%, 0, 0)。
+如果需要使用函数来表示带不透明度的颜色值，值的范围是 0~1 及其之间的小数或者 0%~100%，比如带 67% 不透明度的红色是 rgba(255, 0, 0, 0.67) 或者 rgba(100%, 0%, 0%, 67%)
+
+> 需要注意的是 RGB 这 3 个颜色值需要保持一致的写法，要嘛用数字要嘛用百分比，而不透明度的值的可以不用和 RGB 保持一致写法。比如 rgb(100%, 0, 0) 这个写法是无效的；而 rgb(100%, 0%, 0%, 0.67) 是有效的。
+
+在第 4 代 CSS 颜色标准中，新增了一种新的函数写法，即可以把 RGB 中值的分隔逗号改成空格，而把 RGB 和 alpha 中的逗号改成 /，比如带 67% 不透明度的红色可以这样写 rgba(255 0 0 / 0.67)。另外还把 rgba 的写法合并到 rgb 函数中了，即 rgb 可以直接写带不透明度的颜色。
+
+### HSL[A] 颜色
+
+HSL[A] 颜色是由色相(hue)-饱和度(saturation)-亮度(lightness)-不透明度组成的颜色体系。
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/24.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+- 色相（H）是色彩的基本属性，值范围是 0360 或者 0deg360deg， 0 (或 360) 为红色, 120 为绿色, 240 为蓝色；
+- 饱和度（S）是指色彩的纯度，越高色彩越纯，低则逐渐变灰，取 0~100% 的数值；0% 为灰色， 100% 全色；
+- 亮度（L），取 0~100%，0% 为暗，100% 为白；
+- 不透明度（A），取 0100%，或者 01 及之间的小数；
+
+写法上可以参考 RGB 的写法，只是参数的值不一样。
+给一个按钮设置不透明度为 67% 的红色的 color 的写法，以下全部写法效果一致：
+
+```css
+button {
+	color: #ff0000aa;
+	color: #f00a;
+	color: rgba(255, 0, 0, 0.67);
+	color: rgb(100% 0% 0% / 67%);
+	color: hsla(0, 100%, 50%, 67%);
+	color: hsl(0deg 100% 50% / 67%);
+}
+```
+
+小提示：在 Chrome DevTools 中可以按住 shift + 鼠标左键可以切换颜色的表示方式。
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/25.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+## 媒体查询
+
+媒体查询是指针对不同的设备、特定的设备特征或者参数进行定制化的修改网站的样式。
+
+你可以通过给 <link> 加上 media 属性来指定该样式文件只能对什么设备生效，不指定的话默认是 all，即对所有设备都生效：
+
+```html
+<link rel="stylesheet" src="styles.css" media="screen" />
+<link rel="stylesheet" src="styles.css" media="print" />
+```
+
+都支持哪些设备类型？
+
+- all：适用于所有设备；
+- print：适用于在打印预览模式下在屏幕上查看的分页材料和文档；
+- screen：主要用于屏幕；
+- speech：主要用于语音合成器。
+
+> 需要注意的是：通过 media 指定的 资源尽管不匹配它的设备类型，但是浏览器依然会加载它。
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/26.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+除了通过 <link> 让指定设备生效外，还可以通过 @media 让 CSS 规则在特定的条件下才能生效。响应式页面就是使用了 @media 才让一个页面能够同时适配 PC、Pad 和手机端。
+
+```css
+@media (min-width: 1000px) {
+}
+```
+
+媒体查询支持逻辑操作符：
+
+- and：查询条件都满足的时候才生效；
+- not：查询条件取反；
+- only：整个查询匹配的时候才生效，常用语兼容旧浏览器，使用时候必须指定媒体类型；
+  逗号或者 or：查询条件满足一项即可匹配；
+
+媒体查询还支持[众多的媒体特性](https://developer.mozilla.org/zh-CN/docs/Web/Guide/CSS/Media_queries#%E5%AA%92%E4%BD%93%E7%89%B9%E6%80%A7)，使得它可以写出很复杂的查询条件：
+
+```css
+/* 用户设备的最小高度为680px或为纵向模式的屏幕设备 */
+@media (min-height: 680px), screen and (orientation: portrait) {
+}
+```
+
+## 自定义属性
+
+之前我们通常是在预处理器里才可以使用变量，而现在 CSS 里也支持了变量的用法。通过自定义属性就可以在想要使用的地方引用它。
+自定义属性也和普通属性一样具有级联性，申明在 :root 下的时候，在全文档范围内可用，而如果是在某个元素下申明自定义属性，则只能在它及它的子元素下才可以使用。
+自定义属性必须通过 --x 的格式申明，比如：--theme-color: red; 使用自定义属性的时候，需要用 var 函数。比如：
+
+```css
+<!-- 定义自定义属性 -- > :root {
+	--theme-color: red;
+}
+
+<!-- 使用变量 -- > h1 {
+	color: var(--theme-color);
+}
+```
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/27.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+上图这个是使用 CSS 自定义属性配合 JS 实现的动态调整元素的 box-shadow，具体可以看这个 [codepen demo](https://codepen.io/bulandent/pen/GVjxLJ)。
+
+### 1px 边框解决方案
+
+Retina 显示屏比普通的屏幕有着更高的分辨率，所以在移动端的 1px 边框就会看起来比较粗，为了美观通常需要把这个线条细化处理。这里有篇文章列举了 7 中方案可以参考一下：[7 种方法解决移动端 Retina 屏幕 1px 边框问题](https://www.jianshu.com/p/7e63f5a32636)
+而这里附上最后一种通过伪类和 transform 实现的相对完美的解决方案：
+只设置单条底部边框：
+
+```css
+.scale-1px-bottom {
+	position: relative;
+	border: none;
+}
+.scale-1px-bottom::after {
+	content: "";
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: #000;
+	width: 100%;
+	height: 1px;
+	-webkit-transform: scaleY(0.5);
+	transform: scaleY(0.5);
+	-webkit-transform-origin: 0 0;
+	transform-origin: 0 0;
+}
+```
+同时设置 4 条边框：
+```css
+.scale-1px {
+    position: relative;
+    margin-bottom: 20px;
+    border:none;
+}
+.scale-1px::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid #000;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 200%;
+    height: 200%;
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+}
+```
+## 清除浮动
+什么是浮动：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。
+为什么要清楚浮动，它造成了什么问题？
+因为浮动元素会脱离正常的文档流，并不会占据文档流的位置，所以如果一个父元素下面都是浮动元素，那么这个父元素就无法被浮动元素所撑开，这样一来父元素就丢失了高度，这就是所谓的浮动造成的父元素高度坍塌问题。
+父元素高度一旦坍塌将对后面的元素布局造成影响，为了解决这个问题，所以需要清除浮动，让父元素恢复高度，那该如何做呢？
+这里介绍两种方法：通过 BFC 来清除、通过 clear 来清除。
+## BFC 清除浮动
+前面介绍 BFC 的时候提到过，计算 BFC 高度的时候浮动子元素的高度也将计算在内，利用这条规则就可以清楚浮动。
+假设一个父元素 parent 内部只有 2 个子元素 child，且它们都是左浮动的，这个时候 parent 如果没有设置高度的话，因为浮动造成了高度坍塌，所以 parent 的高度会是 0，此时只要给 parent 创造一个 BFC，那它的高度就能恢复了。
+而产生 BFC 的方式很多，我们可以给父元素设置overflow: auto 来简单的实现 BFC 清除浮动，但是为了兼容 IE 最好用 overflow: hidden。
+```css
+.parent {
+    overflow: hidden;
+}
+```
+通过 overflow: hidden 来清除浮动并不完美，当元素有阴影或存在下拉菜单的时候会被截断，所以该方法使用比较局限。
+
+## 通过 clear 清除浮动
+我先把结论贴出来：
+```css
+.clearfix {
+    zoom: 1;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+```
+这种写法的核心原理就是通过 ::after 伪元素为在父元素的最后一个子元素后面生成一个内容为空的块级元素，然后通过 clear 将这个伪元素移动到所有它之前的浮动元素的后面，画个图来理解一下。
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/28.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+可以结合这个 [codepen demo](https://codepen.io/bulandent/pen/LYbOvOa) 一起理解上图的 clear 清楚浮动原理。
+上面这个 demo 或者图里为了展示需要所以给伪元素的内容设置为了 ::after，实际使用的时候需要设置为空字符串，让它的高度为 0，从而父元素的高度都是由实际的子元素撑开。
+该方式基本上是现在人人都在用的清除浮动的方案，非常通用。
+参考：[CSS中的浮动和清除浮动，梳理一下](https://www.jianshu.com/p/09bd5873bed4)
+## 消除浏览器默认样式
+针对同一个类型的 HTML 标签，不同的浏览器往往有不同的表现，所以在网站制作的时候，开发者通常都是需要将这些浏览器的默认样式清除，让网页在不同的浏览器上能够保持一致。
+针对清除浏览器默认样式这件事，在很早之前 CSS 大师 Eric A. Meyer 就干过。它就是写一堆通用的样式用来重置浏览器默认样式，这些样式通常会放到一个命名为 reset.css 文件中。比如大师的 reset.css 是这么写的：
+
+```css
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+```
+他的这份 reset.css 据说是被使用最广泛的重设样式的方案了。
+除了 reset.css 外，后来又出现了 [Normalize.css](https://github.com/necolas/normalize.css) 。关于 Normalize.css, 其作者 necolas 专门写了一篇文章介绍了它，并谈到了它和 reset.css 的区别。这个是他写那篇文章的翻译版：[让我们谈一谈 Normalize.css。](https://jerryzou.com/posts/aboutNormalizeCss/)
+文章介绍到：Normalize.css 只是一个很小的CSS文件，但它在默认的 HTML 元素样式上提供了跨浏览器的高度一致性。相比于传统的 CSS reset，Normalize.css 是一种现代的、为 HTML5 准备的优质替代方案，现在已经有很多知名的框架和网站在使用它了。
+Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.github.io/normalize.css/latest/normalize.css)
+区别于 reset.css，Normalize.css 有如下特点：
+
+* reset.css 几乎为所有标签都设置了默认样式，而 Normalize.css 则是有选择性的保护了部分有价值的默认值；
+* 修复了很多浏览器的 bug，而这是 reset.css 没做到的；
+* 不会让你的调试工具变的杂乱，相反 reset.css 由于设置了很多默认值，所以在浏览器调试工具中往往会看到一大堆的继承样式，显得很杂乱；
+* Normalize.css 是模块化的，所以可以选择性的去掉永远不会用到的部分，比如表单的一般化；
+* Normalize.css 有详细的说明文档；
+
+## 长文本处理
+### 默认：字符太长溢出了容器
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/29.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 字符超出部分换行
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/30.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
