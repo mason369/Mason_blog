@@ -1266,140 +1266,175 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 	line-height: 100px;
 }
 ```
+
 ## 固定宽高的块级盒子
+
 ### 方法一：absolute + 负 margin
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/35.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：absolute + margin auto
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/36.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：absolute + calc
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/37.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 不固定宽高的块级盒子
+
 这里列了 6 种方法，参考了[颜海镜](https://segmentfault.com/a/1190000016389031) 写的文章 ，其中的两种 line-height 和 writing-mode 方案看后让我惊呼：还有这种操作？学到了学到了。
+
 ### 方法一：absolute + transform
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/38.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：line-height + vertical-align
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/39.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：writing-mode
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/40.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：table-cell
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/41.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法五：flex
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/42.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法六：grid
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/43.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 常用布局
+
 #### 两栏布局（边栏定宽主栏自适应）
+
 针对以下这些方案写了几个示例： [codepen demo](https://codepen.io/bulandent/pen/JjbqxbM)
 
 ### 方法一：float + overflow（BFC 原理）
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/44.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：float + margin
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/45.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：flex
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/46.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：grid
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/47.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 三栏布局（两侧栏定宽主栏自适应）
+
 针对以下这些方案写了几个示例： [codepen demo](https://codepen.io/bulandent/pen/abBrXrj)
 
 ### 方法一：圣杯布局
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/48.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：双飞翼布局
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/49.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：float + overflow（BFC 原理）
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/50.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：flex
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/51.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法五：grid
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/52.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 多列等高布局
+
 结合示例阅读更佳：[codepen demo](https://codepen.io/bulandent/pen/jOVogdj)
 
-### 方法一：padding + 负margin
+### 方法一：padding + 负 margin
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/53.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：设置父级背景图片
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/54.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
-##  三行布局（头尾定高主栏自适应）
+## 三行布局（头尾定高主栏自适应）
+
 列了 4 种方法，都是基于如下的 HTML 和 CSS 的，结合示例阅读效果更佳：[codepen demo](https://codepen.io/bulandent/pen/yLVdpvr)
 
 ```html
 <div class="layout">
-    <header></header>
-    <main>
-        <div class="inner"></div>
-    </main>
-    <footer></footer>
+	<header></header>
+	<main>
+		<div class="inner"></div>
+	</main>
+	<footer></footer>
 </div>
 ```
+
 ```css
 html,
 body,
 .layout {
-    height: 100%;
+	height: 100%;
 }
 body {
-    margin: 0;
+	margin: 0;
 }
-header, 
+header,
 footer {
-    height: 50px;
+	height: 50px;
 }
 main {
-    overflow-y: auto;
+	overflow-y: auto;
 }
 ```
+
 ### 方法一：calc
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/55.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：absolute
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/56.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：flex
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/57.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：grid
+
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/58.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
