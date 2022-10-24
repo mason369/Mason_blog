@@ -974,58 +974,69 @@ Retina 显示屏比普通的屏幕有着更高的分辨率，所以在移动端�
 	transform-origin: 0 0;
 }
 ```
+
 同时设置 4 条边框：
+
 ```css
 .scale-1px {
-    position: relative;
-    margin-bottom: 20px;
-    border:none;
+	position: relative;
+	margin-bottom: 20px;
+	border: none;
 }
 .scale-1px::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    border: 1px solid #000;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    width: 200%;
-    height: 200%;
-    -webkit-transform: scale(0.5);
-    transform: scale(0.5);
-    -webkit-transform-origin: left top;
-    transform-origin: left top;
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 1px solid #000;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	width: 200%;
+	height: 200%;
+	-webkit-transform: scale(0.5);
+	transform: scale(0.5);
+	-webkit-transform-origin: left top;
+	transform-origin: left top;
 }
 ```
+
 ## 清除浮动
+
 什么是浮动：浮动元素会脱离文档流并向左/向右浮动，直到碰到父元素或者另一个浮动元素。
 为什么要清楚浮动，它造成了什么问题？
 因为浮动元素会脱离正常的文档流，并不会占据文档流的位置，所以如果一个父元素下面都是浮动元素，那么这个父元素就无法被浮动元素所撑开，这样一来父元素就丢失了高度，这就是所谓的浮动造成的父元素高度坍塌问题。
 父元素高度一旦坍塌将对后面的元素布局造成影响，为了解决这个问题，所以需要清除浮动，让父元素恢复高度，那该如何做呢？
 这里介绍两种方法：通过 BFC 来清除、通过 clear 来清除。
+
 ## BFC 清除浮动
+
 前面介绍 BFC 的时候提到过，计算 BFC 高度的时候浮动子元素的高度也将计算在内，利用这条规则就可以清楚浮动。
 假设一个父元素 parent 内部只有 2 个子元素 child，且它们都是左浮动的，这个时候 parent 如果没有设置高度的话，因为浮动造成了高度坍塌，所以 parent 的高度会是 0，此时只要给 parent 创造一个 BFC，那它的高度就能恢复了。
-而产生 BFC 的方式很多，我们可以给父元素设置overflow: auto 来简单的实现 BFC 清除浮动，但是为了兼容 IE 最好用 overflow: hidden。
+而产生 BFC 的方式很多，我们可以给父元素设置 overflow: auto 来简单的实现 BFC 清除浮动，但是为了兼容 IE 最好用 overflow: hidden。
+
 ```css
 .parent {
-    overflow: hidden;
+	overflow: hidden;
 }
 ```
+
 通过 overflow: hidden 来清除浮动并不完美，当元素有阴影或存在下拉菜单的时候会被截断，所以该方法使用比较局限。
 
 ## 通过 clear 清除浮动
+
 我先把结论贴出来：
+
 ```css
 .clearfix {
-    zoom: 1;
+	zoom: 1;
 }
 .clearfix::after {
-    content: "";
-    display: block;
-    clear: both;
+	content: "";
+	display: block;
+	clear: both;
 }
 ```
+
 这种写法的核心原理就是通过 ::after 伪元素为在父元素的最后一个子元素后面生成一个内容为空的块级元素，然后通过 clear 将这个伪元素移动到所有它之前的浮动元素的后面，画个图来理解一下。
 
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/28.png">
@@ -1034,69 +1045,154 @@ Retina 显示屏比普通的屏幕有着更高的分辨率，所以在移动端�
 可以结合这个 [codepen demo](https://codepen.io/bulandent/pen/LYbOvOa) 一起理解上图的 clear 清楚浮动原理。
 上面这个 demo 或者图里为了展示需要所以给伪元素的内容设置为了 ::after，实际使用的时候需要设置为空字符串，让它的高度为 0，从而父元素的高度都是由实际的子元素撑开。
 该方式基本上是现在人人都在用的清除浮动的方案，非常通用。
-参考：[CSS中的浮动和清除浮动，梳理一下](https://www.jianshu.com/p/09bd5873bed4)
+参考：[CSS 中的浮动和清除浮动，梳理一下](https://www.jianshu.com/p/09bd5873bed4)
+
 ## 消除浏览器默认样式
+
 针对同一个类型的 HTML 标签，不同的浏览器往往有不同的表现，所以在网站制作的时候，开发者通常都是需要将这些浏览器的默认样式清除，让网页在不同的浏览器上能够保持一致。
 针对清除浏览器默认样式这件事，在很早之前 CSS 大师 Eric A. Meyer 就干过。它就是写一堆通用的样式用来重置浏览器默认样式，这些样式通常会放到一个命名为 reset.css 文件中。比如大师的 reset.css 是这么写的：
 
 ```css
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
-    vertical-align: baseline;
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-    display: block;
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+	display: block;
 }
 body {
-    line-height: 1;
+	line-height: 1;
 }
-ol, ul {
-    list-style: none;
+ol,
+ul {
+	list-style: none;
 }
-blockquote, q {
-    quotes: none;
+blockquote,
+q {
+	quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
-    content: '';
-    content: none;
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: "";
+	content: none;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
 }
 ```
+
 他的这份 reset.css 据说是被使用最广泛的重设样式的方案了。
 除了 reset.css 外，后来又出现了 [Normalize.css](https://github.com/necolas/normalize.css) 。关于 Normalize.css, 其作者 necolas 专门写了一篇文章介绍了它，并谈到了它和 reset.css 的区别。这个是他写那篇文章的翻译版：[让我们谈一谈 Normalize.css。](https://jerryzou.com/posts/aboutNormalizeCss/)
-文章介绍到：Normalize.css 只是一个很小的CSS文件，但它在默认的 HTML 元素样式上提供了跨浏览器的高度一致性。相比于传统的 CSS reset，Normalize.css 是一种现代的、为 HTML5 准备的优质替代方案，现在已经有很多知名的框架和网站在使用它了。
+文章介绍到：Normalize.css 只是一个很小的 CSS 文件，但它在默认的 HTML 元素样式上提供了跨浏览器的高度一致性。相比于传统的 CSS reset，Normalize.css 是一种现代的、为 HTML5 准备的优质替代方案，现在已经有很多知名的框架和网站在使用它了。
 Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.github.io/normalize.css/latest/normalize.css)
 区别于 reset.css，Normalize.css 有如下特点：
 
-* reset.css 几乎为所有标签都设置了默认样式，而 Normalize.css 则是有选择性的保护了部分有价值的默认值；
-* 修复了很多浏览器的 bug，而这是 reset.css 没做到的；
-* 不会让你的调试工具变的杂乱，相反 reset.css 由于设置了很多默认值，所以在浏览器调试工具中往往会看到一大堆的继承样式，显得很杂乱；
-* Normalize.css 是模块化的，所以可以选择性的去掉永远不会用到的部分，比如表单的一般化；
-* Normalize.css 有详细的说明文档；
+- reset.css 几乎为所有标签都设置了默认样式，而 Normalize.css 则是有选择性的保护了部分有价值的默认值；
+- 修复了很多浏览器的 bug，而这是 reset.css 没做到的；
+- 不会让你的调试工具变的杂乱，相反 reset.css 由于设置了很多默认值，所以在浏览器调试工具中往往会看到一大堆的继承样式，显得很杂乱；
+- Normalize.css 是模块化的，所以可以选择性的去掉永远不会用到的部分，比如表单的一般化；
+- Normalize.css 有详细的说明文档；
 
 ## 长文本处理
+
 ### 默认：字符太长溢出了容器
 
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/29.png">
@@ -1105,4 +1201,205 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 ### 字符超出部分换行
 
 <center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/30.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 字符超出位置使用连字符
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/31.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 单行文本超出省略
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/32.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 多行文本超出省略
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/33.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+查看以上这些方案的示例： [codepen demo](https://codepen.io/bulandent/pen/abBrNby)
+
+有意思的是刚好前两天看到 chokcoco 针对文本溢出也写了一篇文章，主要突出的是对整块的文本溢出处理。啥叫整块文本？比如，下面这种技术标签就是属于整块文本：
+
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/34.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+另外他还对 iOS/Safari 做了兼容处理，感兴趣的可以去阅读下：[CSS 整块文本溢出省略特性探究。](https://juejin.cn/post/6938583040469762055)
+水平垂直居中
+让元素在父元素中呈现出水平垂直居中的形态，无非就 2 种情况：
+
+- 单行的文本、inline 或者 inline-block 元素；
+- 固定宽高的块级盒子；
+- 不固定宽高的块级盒子；
+
+以下列到的所有水平垂直居中方案这里写了个 [codepen demo](https://codepen.io/bulandent/pen/ymaKoM)，配合示例阅读效果更佳。
+
+## 单行的文本、inline 或 inline-block 元素
+
+### 水平居中
+
+此类元素需要水平居中，则父级元素必须是块级元素(block level)，且父级元素上需要这样设置样式：
+
+```css
+.parent {
+	text-align: center;
+}
+```
+
+### 垂直居中
+
+方法一：通过设置上下内间距一致达到垂直居中的效果：
+
+```css
+.single-line {
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+```
+
+方法二：通过设置 height 和 line-height 一致达到垂直居中：
+
+```css
+.single-line {
+	height: 100px;
+	line-height: 100px;
+}
+```
+## 固定宽高的块级盒子
+### 方法一：absolute + 负 margin
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/35.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法二：absolute + margin auto
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/36.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法三：absolute + calc
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/37.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+## 不固定宽高的块级盒子
+这里列了 6 种方法，参考了[颜海镜](https://segmentfault.com/a/1190000016389031) 写的文章 ，其中的两种 line-height 和 writing-mode 方案看后让我惊呼：还有这种操作？学到了学到了。
+### 方法一：absolute + transform
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/38.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法二：line-height + vertical-align
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/39.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法三：writing-mode
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/40.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法四：table-cell
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/41.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法五：flex
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/42.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法六：grid
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/43.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+## 常用布局
+#### 两栏布局（边栏定宽主栏自适应）
+针对以下这些方案写了几个示例： [codepen demo](https://codepen.io/bulandent/pen/JjbqxbM)
+
+### 方法一：float + overflow（BFC 原理）
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/44.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法二：float + margin
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/45.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法三：flex
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/46.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法四：grid
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/47.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+## 三栏布局（两侧栏定宽主栏自适应）
+针对以下这些方案写了几个示例： [codepen demo](https://codepen.io/bulandent/pen/abBrXrj)
+
+### 方法一：圣杯布局
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/48.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法二：双飞翼布局
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/49.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法三：float + overflow（BFC 原理）
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/50.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法四：flex
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/51.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法五：grid
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/52.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+## 多列等高布局
+结合示例阅读更佳：[codepen demo](https://codepen.io/bulandent/pen/jOVogdj)
+
+### 方法一：padding + 负margin
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/53.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法二：设置父级背景图片
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/54.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+##  三行布局（头尾定高主栏自适应）
+列了 4 种方法，都是基于如下的 HTML 和 CSS 的，结合示例阅读效果更佳：[codepen demo](https://codepen.io/bulandent/pen/yLVdpvr)
+
+```html
+<div class="layout">
+    <header></header>
+    <main>
+        <div class="inner"></div>
+    </main>
+    <footer></footer>
+</div>
+```
+```css
+html,
+body,
+.layout {
+    height: 100%;
+}
+body {
+    margin: 0;
+}
+header, 
+footer {
+    height: 50px;
+}
+main {
+    overflow-y: auto;
+}
+```
+### 方法一：calc
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/55.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法二：absolute
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/56.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法三：flex
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/57.png">
+<span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
+
+### 方法四：grid
+<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/58.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
