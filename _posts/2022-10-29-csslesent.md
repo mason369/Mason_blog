@@ -54,7 +54,7 @@ el.addEventListener("transitionend", () => {
 
 下面是一个小实例，在 hover 一段时间后触发 alert
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-29-img/1.awebp">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-29-img/1.awebp">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 原理和上面一致，完整代码可以查看线上demo：hover_alert (codepen.io)或者hover_alert(runjs.work)
 
@@ -97,7 +97,7 @@ el.addEventListener("transitionend", () => {
 
 是不是非常方便呢？下面是以前做过的一个小案例，实现了长按触发元素选中
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-29-img/2.awebp">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-29-img/2.awebp">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 完整代码可以查看线上 demo：长按框选 (codepen.io)或者长按框选 (runjs.work)
@@ -158,7 +158,7 @@ view.addEventListener("animationiteration", () => {
 
 下面是一个通过 animationiteration 来代替 setInterval 实现的轮播图
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-29-img/3.awebp">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-29-img/3.awebp">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 完整代码可以查看线上 demo：CSS banner(codepen.io)或者 css_banner(runjs.work)

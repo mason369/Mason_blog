@@ -9,7 +9,7 @@ description: 本篇文章围绕了 CSS 的核心知识点和项目中常见的�
 
 本篇文章围绕了 CSS 的核心知识点和项目中常见的需求来展开。虽然行文偏长，但较基础，适合初级中级前端阅读，阅读的时候请适当跳过已经掌握的部分。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/1.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/1.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 核心概念和知识点
@@ -33,7 +33,7 @@ color: red;
 
 声明块如果需要作用到对应的 HTML 元素，那还需要加上选择器。选择器和声明块组成了 CSS 规则集（CSS ruleset），常简称为 CSS 规则。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/2.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/2.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ```css
@@ -222,7 +222,7 @@ CSS 选择器无疑是其核心之一，对于基础选择器以及一些常用�
 
 ### 优先级
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/3.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/3.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 优先级就是分配给指定的 CSS 声明的一个权重，它由匹配的选择器中的每一种选择器类型的数值决定。为了记忆，可以把权重分成如下几个等级，数值越大的权重越高：
@@ -243,7 +243,7 @@ CSS 选择器无疑是其核心之一，对于基础选择器以及一些常用�
 
 ## 继承性
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/4.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/4.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 在 CSS 中有一个很重要的特性就是子元素会继承父元素对应属性计算后的值。比如页面根元素 html 的文本颜色默认是黑色的，页面中的所有其他元素都将继承这个颜色，当申明了如下样式后，H1 文本将变成橙色。
@@ -304,12 +304,12 @@ CSS 属性很多，但并不是所有的属性默认都是能继承父元素对�
 
 标准盒模型认为：盒子的实际尺寸 = 内容（设置的宽/高） + 内边距 + 边框
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/5.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/5.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 所以 .box 元素内容的宽度就为 200px，而实际的宽度则是 width + padding-left + padding-right + border-left-width + border-right-width = 200 + 10 + 10 + 1 + 1 = 222。
 IE 盒模型认为：盒子的实际尺寸 = 设置的宽/高 = 内容 + 内边距 + 边框
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/6.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/6.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 .box 元素所占用的实际宽度为 200px，而内容的真实宽度则是 width - padding-left - padding-right - border-left-width - border-right-width = 200 - 10 - 10 - 1 - 1 = 178。
 现在高版本的浏览器基本上默认都是使用标准盒模型，而像 IE6 这种老古董才是默认使用 IE 盒模型的。
@@ -321,11 +321,11 @@ IE 盒模型认为：盒子的实际尺寸 = 设置的宽/高 = 内容 + 内边�
 视觉格式化模型
 视觉格式化模型（Visual formatting model）是用来处理和在视觉媒体上显示文档时使用的计算规则。CSS 中一切皆盒子，而视觉格式化模型简单来理解就是规定这些盒子应该怎么样放置到页面中去，这个模型在计算的时候会依赖到很多的因素，比如：盒子尺寸、盒子类型、定位方案（是浮动还是定位）、兄弟元素或者子元素以及一些别的因素。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/7.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/7.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 从上图中可以看到视觉格式化模型涉及到的内容很多，有兴趣深入研究的可以结合上图看这个 W3C 的文档 [Visual formatting model](https://www.w3.org/TR/CSS2/visuren.html)。所以这里就简单介绍下盒子类型。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/8.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/8.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 盒子类型由 display 决定，同时给一个元素设置 display 后，将会决定这个盒子的 2 个显示类型（display type）：
@@ -392,7 +392,7 @@ IE 盒模型认为：盒子的实际尺寸 = 设置的宽/高 = 内容 + 内边�
 
 块格式化上下文，它是一个独立的渲染区域，只有块级盒子参与，它规定了内部的块级盒子如何布局，并且与这个区域外部毫不相干。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/9.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/9.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### BFC 渲染规则
@@ -416,7 +416,7 @@ IE 盒模型认为：盒子的实际尺寸 = 设置的宽/高 = 内容 + 内边�
 
 1. 自适应两栏布局
 应用原理：BFC 的区域不会和浮动区域重叠，所以就可以把侧边栏固定宽度且左浮动，而对右侧内容触发 BFC，使得它的宽度自适应该行剩余宽度。
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/10.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/10.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ```html
@@ -441,7 +441,7 @@ IE 盒模型认为：盒子的实际尺寸 = 设置的宽/高 = 内容 + 内边�
 
 浮动造成的问题就是父元素高度坍塌，所以清除浮动需要解决的问题就是让父元素的高度恢复正常。而用 BFC 清除浮动的原理就是：计算 BFC 的高度时，浮动元素也参与计算。只要触发父元素的 BFC 即可。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/11.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/11.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ```css
@@ -452,7 +452,7 @@ IE 盒模型认为：盒子的实际尺寸 = 设置的宽/高 = 内容 + 内边�
 
 3. 防止垂直 margin 合并
 BFC 渲染原理之一：同一个 BFC 下的垂直 margin 会发生合并。所以如果让 2 个元素不在同一个 BFC 中即可阻止垂直 margin 合并。那如何让 2 个相邻的兄弟元素不在同一个 BFC 中呢？可以给其中一个元素外面包裹一层，然后触发其包裹层的 BFC，这样一来 2 个元素就不会在同一个 BFC 中了。
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/12.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/12.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ```html
@@ -483,7 +483,7 @@ BFC 渲染原理之一：同一个 BFC 下的垂直 margin 会发生合并。所
 
 IFC 的形成条件非常简单，块级元素中仅包含内联级别元素，需要注意的是当 IFC 中有块级元素插入时，会产生两个匿名块将父元素分割开来，产生两个 IFC。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/13.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/13.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### IFC 渲染规则
@@ -504,7 +504,7 @@ IFC 的形成条件非常简单，块级元素中仅包含内联级别元素，�
 <p>It can get <strong>very complicated</storng> once you start looking into it.</p>
 ```
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/14.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/14.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 对应上面这样一串 HTML 分析如下：
@@ -531,7 +531,7 @@ IFC 的形成条件非常简单，块级元素中仅包含内联级别元素，�
 
 在电脑显示屏幕上的显示的页面其实是一个三维的空间，水平方向是 X 轴，竖直方向是 Y 轴，而屏幕到眼睛的方向可以看成是 Z 轴。众 HTML 元素依据自己定义的属性的优先级在 Z 轴上按照一定的顺序排开，而这其实就是层叠上下文所要描述的东西。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/15.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/15.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 我们对层叠上下文的第一印象可能要来源于 z-index，认为它的值越大，距离屏幕观察者就越近，那么层叠等级就越高，事实确实是这样的，但层叠上下文的内容远非仅仅如此：
 
@@ -574,7 +574,7 @@ IFC 的形成条件非常简单，块级元素中仅包含内联级别元素，�
 
 在同一个层叠上下文中如果有多个元素，那么他们之间的层叠顺序是怎么样的呢？
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/16.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/16.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 以下这个列表越往下层叠优先级越高，视觉上的效果就是越容易被用户看到（不会被其他元素覆盖）：
 
@@ -610,7 +610,7 @@ CSS 的声明是由属性和值组成的，而值的类型有许多种：
 
 屏幕分辨率是指在屏幕的横纵方向上的像素点数量，比如分辨率 1920×1080 意味着水平方向含有 1920 个像素数，垂直方向含有 1080 个像素数。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/17.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/17.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 而 px 表示的是 CSS 中的像素，在 CSS 中它是绝对的长度单位，也是最基础的单位，其他长度单位会自动被浏览器换算成 px。但是对于设备而言，它其实又是相对的长度单位，比如宽高都为 2px，在正常的屏幕下，其实就是 4 个像素点，而在设备像素比(devicePixelRatio) 为 2 的 Retina 屏幕下，它就有 16 个像素点。所以屏幕尺寸一致的情况下，屏幕分辨率越高，显示效果就越细腻。
@@ -717,7 +717,7 @@ header {
 }
 ```
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/18.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/18.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 每个从设计图量出来的尺寸只要除于 100 即可得到当前元素的 rem 值，都不用经过计算，非常方便。偷偷告诉你，如果你把上面那串计算 html 标签 font-size 的 JS 代码中的 200 替换成 2，那在计算 rem 的时候就不需要除于 100 了，从设计图量出多大 px，就直接写多少个 rem。
@@ -731,7 +731,7 @@ vw 和 vh 分别是相对于屏幕视口宽度和高度而言的长度单位：
 
 在 JS 中 100vw = window.innerWidth，100vh = window.innerHeight。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/19.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/19.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 vw/vh 的出现使得多了一种写自适应布局的方案，开发者不再局限于 rem 了。
 相对视口的单位，除了 vw/vh 外，还有 vmin 和 vmax：
@@ -762,7 +762,7 @@ CSS 中用于表示颜色的值种类繁多，足够构成一个体系，所以�
 
 如下这张图是 16 个基础色，又叫 VGA 颜色。截止到目前为止 CSS 颜色关键字总共有 146 个，这里可以查看 [完整的色彩关键字列表](https://codepen.io/bulandent/pen/gOLovwL)
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/20.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/20.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 需要注意的是如果声明的时候的颜色关键字是错误的，浏览器会忽略它。
@@ -776,7 +776,7 @@ transparent 关键字表示一个完全透明的颜色，即该颜色看上去�
 
 下面这个图是用 4 条边框填充的正方形，看懂了它你大概就知道该如何用 CSS 写三角形了。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/21.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/21.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ```css
@@ -799,7 +799,7 @@ div {
 
 看下示例：
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/22.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/22.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 增大点击区域
@@ -829,7 +829,7 @@ currentColor 会取当前元素继承父级元素的文本颜色值或声明的�
 
 RGB[A] 颜色是由 R(red)-G(green)-B(blue)-A(alpha) 组成的色彩空间。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/23.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/23.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 在 CSS 中，它有两种表示形式：
@@ -856,7 +856,7 @@ RGB 中的每种颜色的值范围是 00~ff，值越大表示颜色越深。所�
 
 HSL[A] 颜色是由色相(hue)-饱和度(saturation)-亮度(lightness)-不透明度组成的颜色体系。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/24.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/24.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 - 色相（H）是色彩的基本属性，值范围是 0360 或者 0deg360deg， 0 (或 360) 为红色, 120 为绿色, 240 为蓝色；
@@ -880,7 +880,7 @@ button {
 
 小提示：在 Chrome DevTools 中可以按住 shift + 鼠标左键可以切换颜色的表示方式。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/25.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/25.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 媒体查询
@@ -903,7 +903,7 @@ button {
 
 > 需要注意的是：通过 media 指定的 资源尽管不匹配它的设备类型，但是浏览器依然会加载它。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/26.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/26.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 除了通过 <link> 让指定设备生效外，还可以通过 @media 让 CSS 规则在特定的条件下才能生效。响应式页面就是使用了 @media 才让一个页面能够同时适配 PC、Pad 和手机端。
@@ -944,7 +944,7 @@ button {
 }
 ```
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/27.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/27.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 上图这个是使用 CSS 自定义属性配合 JS 实现的动态调整元素的 box-shadow，具体可以看这个 [codepen demo](https://codepen.io/bulandent/pen/GVjxLJ)。
@@ -1039,7 +1039,7 @@ Retina 显示屏比普通的屏幕有着更高的分辨率，所以在移动端�
 
 这种写法的核心原理就是通过 ::after 伪元素为在父元素的最后一个子元素后面生成一个内容为空的块级元素，然后通过 clear 将这个伪元素移动到所有它之前的浮动元素的后面，画个图来理解一下。
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/28.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/28.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 可以结合这个 [codepen demo](https://codepen.io/bulandent/pen/LYbOvOa) 一起理解上图的 clear 清楚浮动原理。
@@ -1195,34 +1195,34 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 
 ### 默认：字符太长溢出了容器
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/29.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/29.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 字符超出部分换行
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/30.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/30.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 字符超出位置使用连字符
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/31.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/31.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 单行文本超出省略
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/32.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/32.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 多行文本超出省略
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/33.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/33.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 查看以上这些方案的示例： [codepen demo](https://codepen.io/bulandent/pen/abBrNby)
 
 有意思的是刚好前两天看到 chokcoco 针对文本溢出也写了一篇文章，主要突出的是对整块的文本溢出处理。啥叫整块文本？比如，下面这种技术标签就是属于整块文本：
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/34.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/34.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 另外他还对 iOS/Safari 做了兼容处理，感兴趣的可以去阅读下：[CSS 整块文本溢出省略特性探究。](https://juejin.cn/post/6938583040469762055)
@@ -1271,17 +1271,17 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 
 ### 方法一：absolute + 负 margin
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/35.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/35.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：absolute + margin auto
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/36.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/36.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：absolute + calc
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/37.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/37.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 不固定宽高的块级盒子
@@ -1290,32 +1290,32 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 
 ### 方法一：absolute + transform
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/38.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/38.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：line-height + vertical-align
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/39.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/39.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：writing-mode
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/40.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/40.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：table-cell
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/41.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/41.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法五：flex
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/42.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/42.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法六：grid
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/43.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/43.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 常用布局
@@ -1326,22 +1326,22 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 
 ### 方法一：float + overflow（BFC 原理）
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/44.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/44.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：float + margin
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/45.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/45.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：flex
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/46.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/46.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：grid
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/47.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/47.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 三栏布局（两侧栏定宽主栏自适应）
@@ -1350,27 +1350,27 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 
 ### 方法一：圣杯布局
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/48.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/48.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：双飞翼布局
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/49.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/49.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：float + overflow（BFC 原理）
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/50.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/50.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：flex
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/51.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/51.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法五：grid
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/52.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/52.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 多列等高布局
@@ -1379,12 +1379,12 @@ Normalize.css 的具体样式可以看这里 [Normalize.css](https://necolas.git
 
 ### 方法一：padding + 负 margin
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/53.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/53.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：设置父级背景图片
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/54.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/54.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 三行布局（头尾定高主栏自适应）
@@ -1421,20 +1421,20 @@ main {
 
 ### 方法一：calc
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/55.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/55.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法二：absolute
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/56.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/56.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法三：flex
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/57.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/57.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ### 方法四：grid
 
-<center><img style="width:70%;" src="https://mason369.github.io/Mason_blog/assets/2022-10-02-img/58.png">
+<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-10-02-img/58.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
