@@ -7,7 +7,7 @@ comments: true
 description: 本篇文章主要探讨盒模型，以及内边距、边框、外边距的面试题与思考
 ---
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/1.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/1.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 第一问：什么是盒模型？
@@ -22,12 +22,12 @@ description: 本篇文章主要探讨盒模型，以及内边距、边框、外�
 
 **标准的(W3C)盒模型：**
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/2.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/2.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 **IE 盒模型：**
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/3.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/3.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 第三问：怎么设置这两种模型呢？
@@ -90,7 +90,7 @@ description: 本篇文章主要探讨盒模型，以及内边距、边框、外�
 
 答案：如图所示
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/4.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/4.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 1. 整个盒子的大小 = 0 （因为 height 为 0）
@@ -135,7 +135,7 @@ padding 颜色跟背景颜色相同
 
 会超出圆形。原因如图所示，是因为 border-radius 只是改变视觉上的效果，实际上盒子占据的空间还是不变的。
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/5.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/5.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 第七问：当元素设置成 inline-block 会出现什么问题？怎么消除？
@@ -157,7 +157,7 @@ padding 颜色跟背景颜色相同
 </div>
 ```
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/6.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/6.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 **去除 inline-block 元素间间距的 N 种方法**
@@ -235,7 +235,7 @@ span {
 影响左右，不影响上下 ,span 包裹的文字左右位置改变，上下位置不变，但背景色会覆盖上面元素的内容。
 如图所示：
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/7.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/7.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 **行内元素（inline-block）的 padding 左右有效**，但是由于**设置 padding 上下不占页面空间，无法显示效果，所以无效。**
@@ -358,7 +358,7 @@ h1 {
 </header>
 ```
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/8.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/8.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 可以看到其实是 header 的 margin 为 0，然后 h1 的 margin 为 1em，因此 header 和 h1 的 margin 发生了重叠，然后 header 的 margin 就取 1em 和 0 两个值中最大的值了，所以当然取 1em 啦。
@@ -402,7 +402,7 @@ h1 {
 </body>
 </html>
 ```
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/9.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/9.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 
 ## 第十五问：什么是 BFC？
@@ -556,7 +556,7 @@ clear：both：本质就是闭合浮动， 就是让父盒子闭合出口和入�
 </html>
 ```
 
-<center><img style="width:70%;" src="https://masonosam.top//Mason_blog/assets/2022-09-13-img/10.png">
+<center><img style="width:70%;" src="https://masonosam.top/assets/2022-09-13-img/10.png">
 <span style="color:orange; border-bottom: 1px solid #d9d9d9;display: inline-block;color: #999;padding: 2px;"></span></center>
 如果我们清除了浮动，父元素自动检测子盒子最高的高度，然后与其同高。
 
