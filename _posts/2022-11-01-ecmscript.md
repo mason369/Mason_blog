@@ -2,7 +2,7 @@
 title: 1.5万字概括ES6全部特性(已更新ES2020)
 tags: [ECMscript, JS]
 style: fill
-color: success
+color: info
 comments: true
 description: 第三次阅读阮一峰老师的《ES6标准入门》了，以前阅读时不细心，很多地方都是一目十行。最近这次阅读都是逐个逐个字来读，发现很多以前都没有注意到的知识点，为了方便记忆和预览全部ES6特性，所以写下本文。
 ---
