@@ -1,13 +1,13 @@
 - name: HTML5/CSS3
-  percentage: 80
+  percentage: 85
   color: primary
 
-- name: Java
+- name: Vue
   percentage: 20
   color: secondary
 
 - name: JavaScript
-  percentage: 65
+  percentage: 75
   color: danger
 
 - name: C
