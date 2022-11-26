@@ -3,8 +3,8 @@
   color: primary
 
 - name: Vue
-  percentage: 20
-  color: secondary
+  percentage: 40
+  color:  success 
 
 - name: JavaScript
   percentage: 75
