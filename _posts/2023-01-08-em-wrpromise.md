@@ -4,7 +4,7 @@ tags: [Promise, JS进阶, javaScript]
 style: secondary
 color: dark
 comments: true
-description:
+description: 终于到了我们的主线任务 ---《手写 Promise》。对于前端来讲，当你完全理解 Promise 的设计思路，那么你会对你之前所了解的 JS 世界，有一个全新的认知。
 ---
 
 ## 手写 Promise
