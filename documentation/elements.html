@@ -1,11 +1,11 @@
 ---
 layout: page
-title: 更新日志
+title: 宝藏地
 permalink: /elements/
 weight: 4
 ---
 
-<h1>更新日志</h1>
+<h1>个人感兴趣与正在使用的</h1>
 
 {% assign list_items = "" %}
 {% for element in site.elements %}
@@ -15,7 +15,7 @@ weight: 4
         {{ title }}
     {%- endcapture -%}
 {% endfor %}
-{% include elements/list.html title="更新时间" type="toc" %}
+{% include elements/list.html title="Title" type="toc" %}
 
 {% for element in site.elements %}
     {{ element }}
